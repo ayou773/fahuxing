@@ -1,0 +1,24 @@
+{% set court = court or 'XX市XX区人民法院' %}
+
+民事起诉状
+
+原告：{{ plaintiff }}
+被告：{{ defendant }}
+
+诉讼请求：
+{% for claim in claims %}
+{{ loop.index }}. {{ claim }}
+{% endfor %}
+
+事实与理由：
+{{ facts }}
+
+法律依据：
+{{ legal_basis }}
+
+此致
+{{ court }}
+
+
+                                     起诉人：{{ plaintiff }}
+                                     日期：{{ now().strftime('%Y年%m月%d日') }}

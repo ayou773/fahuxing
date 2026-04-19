@@ -1,0 +1,20 @@
+# 本地开发环境
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# IDE
+.idea/
+.vscode/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# 环境文件
+.env
+.env.local
+.env.*.local

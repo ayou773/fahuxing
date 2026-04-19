@@ -1,0 +1,16 @@
+services:
+  db:
+    image: pgvector/pgvector:0.8.2-pg18-trixie
+    container_name: fahuxing-db
+    restart: always
+    environment:
+      POSTGRES_USER: user_admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: fahuxing
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./fahuxing_data:/var/lib/postgresql
+
+volumes:
+  fahuxing_data:

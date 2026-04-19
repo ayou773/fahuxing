@@ -1,0 +1,36 @@
+民事起诉状
+
+原告：{{ plaintiff_name }}{% if plaintiff_gender %}，{{ plaintiff_gender }}{% endif %}{% if plaintiff_birth %}，{{ plaintiff_birth }}生{% endif %}{% if plaintiff_address %}，住{{ plaintiff_address }}{% endif %}{% if plaintiff_phone %}，电话：{{ plaintiff_phone }}{% endif %}
+
+被告：{{ defendant_name }}{% if defendant_address %}，地址：{{ defendant_address }}{% endif %}{% if defendant_phone %}，电话：{{ defendant_phone }}{% endif %}
+
+诉讼请求：
+{% for claim in claims %}
+{{ loop.index }}. {{ claim }}
+{% endfor %}
+
+事实与理由：
+{{ facts_and_reasons }}
+
+{% if legal_basis %}
+法律依据：
+{{ legal_basis }}
+{% endif %}
+
+{% if class_cases %}
+类案参考：
+{{ class_cases }}
+{% endif %}
+
+{% if evidence_list and evidence_list|length > 0 %}
+证据目录：
+{% for ev in evidence_list %}
+{{ loop.index }}. {{ ev }}
+{% endfor %}
+{% endif %}
+
+此致
+{{ court_name }}
+
+具状人：{{ plaintiff_name }}
+{{ date_year }}年{{ date_month }}月{{ date_day }}日

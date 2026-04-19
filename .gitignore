@@ -1,0 +1,37 @@
+# 环境变量文件（绝对不要提交！）
+.env
+.env.*
+.env.local
+.env.*.local
+backend/.env
+frontend/.env.local
+frontend/.env
+frontend/.env.*.local
+
+# Next.js 构建产物
+frontend/.next/
+frontend/out/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 依赖目录
+node_modules/
+venv/
+.env.bak/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# Docker 数据卷
+fahuxing_data/
