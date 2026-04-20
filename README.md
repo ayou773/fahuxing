@@ -144,11 +144,13 @@ docker compose up -d
 # API 文档: http://localhost:8088/docs
 ```
 
+**注意**：现在项目支持一键启动，数据库的 vector 插件会自动激活，无需手动操作。
+
 ### 方式二：本地开发
 
 #### 后端启动
 ```bash
-# 激活 conda 环境
+# 激活 conda 环境   PS： 如果第一次运行，请你先创建一个环境，然后再激活
 conda activate fahuxing_env
 
 # 进入后端目录

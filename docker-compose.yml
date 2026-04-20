@@ -11,6 +11,20 @@ services:
       - "5432:5432"
     volumes:
       - ./fahuxing_data:/var/lib/postgresql
+      - ./init-db:/docker-entrypoint-initdb.d
+
+  backend:
+    build: ./backend
+    container_name: fahuxing-backend
+    restart: always
+    ports:
+      - "8088:8088"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://user_admin:password123@db:5432/fahuxing
+      - YUANQI_API_KEY=${YUANQI_API_KEY}
+      - YUANQI_ASSISTANT_ID=${YUANQI_ASSISTANT_ID}
+    depends_on:
+      - db
 
 volumes:
   fahuxing_data:
