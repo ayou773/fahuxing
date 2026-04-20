@@ -65,27 +65,25 @@
 
 ## 🚀 快速启动
 
-### 方式一：Docker Compose（推荐）
+### 一：Docker Compose
 
 ```bash
 # 1. 复制环境变量配置
-cp backend/.env.example backend/.env
+cd fahuxing
+cd backend
+copy .env.example backend/.env
 
 # 2. 一键启动所有服务
 docker compose up -d
 
-# 3. 访问服务
-# 前端: http://localhost:3000
-# 后端: http://localhost:8088
-# API文档: http://localhost:8088/docs
-```
 
-### 方式二：本地开发
+
+### 二：本地开发
 
 #### 后端启动
 ```bash
-conda activate fahuxing_env  #如果第一次运行需要自己创建一个环境推荐版本 python3.12
 cd backend
+conda activate fahuxing_env  #如果第一次运行需要自己创建一个环境推荐版本 python3.12
 pip install -r requirements.txt
 uvicorn main:app --reload --host 127.0.0.1 --port 8088
 ```
@@ -133,7 +131,7 @@ npm run dev
 
 ### 后端环境变量
 ```bash
-YUANQI_API_KEY=your_api_key    #在后端的。env 文件里填入自己在腾讯元器上智能体的 Key
+YUANQI_API_KEY=your_api_key    #在后端的 .env 文件里填入自己在腾讯元器上智能体的 Key
 YUANQI_ASSISTANT_ID=your_assistant_id  #在后端的 .env 文件 里填入自己的腾讯元器 Id
 DATABASE_URL=postgresql+asyncpg://...
 ```

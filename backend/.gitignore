@@ -1,20 +1,28 @@
-# 本地开发环境
-.env
-
-# Python
-__pycache__/
-*.py[cod]
-
-# IDE
-.idea/
-.vscode/
-
-# Build
-build/
-dist/
-*.egg-info/
-
-# 环境文件
+# 本地开发环境 - 只忽略真实的敏感配置文件
 .env
 .env.local
 .env.*.local
+
+# Python 相关（编译产物、缓存）
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# IDE/编辑器配置
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 系统/临时文件
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
